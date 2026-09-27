@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Renewable Energy - SDG 11</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --accent:#d98a1f;
+    --accent-soft:#f9e6c8;
+    --ink:#1c2333;
+    --muted:#5b6270;
+    --bg:#fdf8f1;
+    --card:#ffffff;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;}
+  h1,h2,h3{font-family:'Poppins',sans-serif;}
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;border-radius:var(--radius);}
+
+  .site-header{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:22px 6%;background:#fff;box-shadow:0 1px 0 rgba(0,0,0,0.06);
+    position:sticky;top:0;z-index:10;
+  }
+  .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.25rem;}
+  .logo-badge{width:34px;height:34px;border-radius:9px;background:var(--accent-soft);
+    display:flex;align-items:center;justify-content:center;font-size:1.1rem;}
+  nav{display:flex;gap:28px;font-size:0.95rem;font-weight:500;color:var(--muted);}
+  nav a:hover{color:var(--ink);}
+  nav a.active{color:var(--accent);font-weight:600;}
+
+  .hero{
+    position:relative;min-height:60vh;display:flex;align-items:center;justify-content:center;
+    text-align:center;color:#fff;padding:80px 6%;
+    background:linear-gradient(180deg, rgba(20,20,20,0.5), rgba(20,20,20,0.72)),
+      url('https://coldwellsolar.com/wp-content/uploads/2022/12/solar-farm-in-agriculture.jpg') center/cover no-repeat;
+  }
+  .hero-icon{font-size:2.6rem;margin-bottom:14px;}
+  .eyebrow{display:inline-block;font-size:0.8rem;letter-spacing:0.06em;color:#ffe3ba;font-weight:600;margin-bottom:14px;}
+  .hero h1{font-size:clamp(2.2rem,5vw,3.4rem);margin-bottom:16px;}
+  .hero p{max-width:560px;margin:0 auto;font-size:1.05rem;color:#f6ede1;}
+
+  section{padding:64px 6%;max-width:1100px;margin:0 auto;}
+  .intro p{max-width:720px;font-size:1.08rem;color:var(--muted);}
+
+  .stats{display:flex;flex-wrap:wrap;gap:20px;}
+  .stat{flex:1;min-width:220px;background:var(--card);border-radius:var(--radius);
+    padding:26px;border-left:4px solid var(--accent);box-shadow:0 6px 20px rgba(0,0,0,0.04);}
+  .stat h3{font-size:1.6rem;color:var(--accent);margin-bottom:6px;}
+  .stat p{color:var(--muted);font-size:0.95rem;}
+
+  .strategies h2, .showcase h3, .quick-actions h2, .explore-more h2{font-size:1.9rem;margin-bottom:28px;}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;}
+  .card{background:var(--card);border-radius:var(--radius);padding:26px;border-top:4px solid var(--accent);
+    box-shadow:0 6px 20px rgba(0,0,0,0.04);transition:transform .2s ease;}
+  .card:hover{transform:translateY(-4px);}
+  .card .icon{font-size:1.7rem;margin-bottom:12px;}
+  .card h4{font-size:1.05rem;margin-bottom:8px;}
+  .card p{color:var(--muted);font-size:0.92rem;}
+
+  .showcase{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;}
+  .showcase-images{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .showcase-images img{height:100%;object-fit:cover;aspect-ratio:1/1;}
+  .showcase-text ul{margin-top:16px;padding-left:20px;color:var(--muted);}
+  .showcase-text li{margin-bottom:10px;}
+
+  .checklist{list-style:none;display:grid;gap:14px;max-width:640px;}
+  .checklist li{display:flex;gap:12px;align-items:flex-start;background:var(--card);
+    padding:16px 18px;border-radius:12px;box-shadow:0 4px 14px rgba(0,0,0,0.04);}
+  .checklist li::before{content:"✓";color:var(--accent);font-weight:700;}
+
+  .explore-more .grid{grid-template-columns:repeat(3,1fr);}
+  .explore-card{display:flex;align-items:center;gap:12px;background:var(--card);
+    padding:18px 20px;border-radius:12px;box-shadow:0 4px 14px rgba(0,0,0,0.04);}
+  .explore-card .icon{font-size:1.4rem;}
+  .explore-card:hover{outline:2px solid var(--accent-soft);}
+
+  .back-home-wrap{text-align:center;padding:20px 6% 60px;}
+  .back-home{display:inline-block;background:var(--accent);color:#fff;padding:14px 30px;
+    border-radius:30px;font-weight:600;}
+  footer{text-align:center;padding:24px;background:#1c2333;color:#c9ccd6;font-size:0.9rem;}
+
+  @media(max-width:760px){
+    nav{display:none;}
+    .showcase{grid-template-columns:1fr;}
+    .explore-more .grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="logo"><span class="logo-badge">🏙️</span> SDG 11</div>
+ 
+</header>
+
+<section class="hero">
+  <div>
+    <span class="eyebrow">THE SOLUTION</span>
+    <div class="hero-icon">☀️</div>
+    <h1>Renewable Energy</h1>
+    <p>Using solar, wind and other clean sources to power cities without relying on fossil fuels.</p>
+  </div>
+</section>
+
+<section class="intro">
+  <p>Cities consume enormous amounts of energy — for homes, offices, transport and industry. Shifting that
+  demand to renewable sources cuts air pollution, stabilises energy costs, and keeps power flowing without
+  depleting the planet's resources.</p>
+</section>
+
+<section class="stats">
+  <div class="stat"><h3>Sunlight</h3><p>falling on a city's rooftops every day is enough to power thousands of homes if captured.</p></div>
+  <div class="stat"><h3>No fuel cost</h3><p>is needed once solar panels or wind turbines are installed — the "fuel" is free.</p></div>
+  <div class="stat"><h3>Cleaner air</h3><p>results when clean power replaces coal and diesel generation in city grids.</p></div>
+</section>
+
+<section class="strategies">
+  <h2>Key strategies</h2>
+  <div class="grid">
+    <div class="card"><div class="icon">🔆</div><h4>Solar power</h4><p>Rooftop and community solar panels turn sunlight into clean, local electricity.</p></div>
+    <div class="card"><div class="icon">🌬️</div><h4>Wind energy</h4><p>Wind turbines on city edges and offshore generate power with zero emissions.</p></div>
+    <div class="card"><div class="icon">💧</div><h4>Hydropower</h4><p>Rivers and water systems can generate steady, reliable renewable electricity.</p></div>
+    <div class="card"><div class="icon">🏢</div><h4>Energy-efficient buildings</h4><p>Better insulation and smart appliances cut how much energy is needed in the first place.</p></div>
+    <div class="card"><div class="icon">🔌</div><h4>Smart grids</h4><p>Digital grids balance supply and demand, reducing waste and blackouts.</p></div>
+    <div class="card"><div class="icon">🤝</div><h4>Community energy programs</h4><p>Shared solar and subsidy schemes make clean power accessible to more households.</p></div>
+  </div>
+</section>
+
+<section class="showcase">
+  <div class="showcase-images">
+    <img src="solar2.jpeg" alt="Solar panels on a rooftop">
+    <img src="wind.jpeg" alt="Wind turbines near a city">
+  </div>
+  <div class="showcase-text">
+    <h3>What it looks like in action</h3>
+    <p style="color:var(--muted)">Clean-energy cities share a few common threads:</p>
+    <ul>
+      <li>Solar panels on schools, offices and homes</li>
+      <li>Wind farms feeding directly into the city grid</li>
+      <li>Buildings designed to use less power overall</li>
+      <li>Incentives that make switching to renewables affordable</li>
+    </ul>
+  </div>
+</section>
+
+<section class="quick-actions">
+  <h2>Small steps you can take today</h2>
+  <ul class="checklist">
+    <li>Switch off lights and appliances when they're not in use</li>
+    <li>Ask your building or society about rooftop solar options</li>
+    <li>Choose energy-efficient appliances when you next upgrade</li>
+    <li>Support local clean-energy policies and community programs</li>
+  </ul>
+</section>
+
+<section class="explore-more">
+  <h2>Explore other solutions</h2>
+  <div class="grid">
+    <a class="explore-card" href="green-transportation.html"><span class="icon">🚌</span> Green Transportation</a>
+    <a class="explore-card" href="green-spaces.html"><span class="icon">🌳</span> More Green Spaces</a>
+    <a class="explore-card" href="waste-management.html"><span class="icon">♻️</span> Smart Waste Management</a>
+  </div>
+</section>
+
+<div class="back-home-wrap">
+  <a class="back-home" href="index2.html">← Back to Home</a>
+</div>
+
+<footer>SDG 11 — Sustainable Cities and Communities</footer>
+
+</body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Green Transportation - SDG 11</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --accent:#c0392b;
+    --accent-soft:#f6dedb;
+    --ink:#1c2333;
+    --muted:#5b6270;
+    --bg:#fdf6f4;
+    --card:#ffffff;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:'Inter',sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.6;
+  }
+  h1,h2,h3{font-family:'Poppins',sans-serif;}
+  a{text-decoration:none;color:inherit;}
+  img{max-width:100%;display:block;border-radius:var(--radius);}
+
+  /* header */
+  .site-header{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:22px 6%;background:#fff;
+    box-shadow:0 1px 0 rgba(0,0,0,0.06);
+    position:sticky;top:0;z-index:10;
+  }
+  .logo{display:flex;align-items:center;gap:10px;font-weight:700;font-size:1.25rem;}
+  .logo-badge{
+    width:34px;height:34px;border-radius:9px;background:var(--accent-soft);
+    display:flex;align-items:center;justify-content:center;font-size:1.1rem;
+  }
+  nav{display:flex;gap:28px;font-size:0.95rem;font-weight:500;color:var(--muted);}
+  nav a:hover{color:var(--ink);}
+  nav a.active{color:var(--accent);font-weight:600;}
+
+  /* hero */
+  .hero{
+    position:relative;
+    min-height:60vh;
+    display:flex;align-items:center;justify-content:center;text-align:center;
+    background:linear-gradient(180deg, rgba(20,20,20,0.55), rgba(20,20,20,0.72)),
+      url('https://images.stockcake.com/public/0/0/b/00b8558e-4cf1-4c85-b141-3ea54a640aa6_large/electric-buses-charging-stockcake.jpg') center/cover no-repeat;
+    color:#fff;padding:80px 6%;
+  }
+  .hero-icon{font-size:2.6rem;margin-bottom:14px;}
+  .eyebrow{
+    display:inline-block;font-size:0.8rem;letter-spacing:0.06em;
+    color:#ffd9d2;font-weight:600;margin-bottom:14px;
+  }
+  .hero h1{font-size:clamp(2.2rem,5vw,3.4rem);margin-bottom:16px;}
+  .hero p{max-width:560px;margin:0 auto;font-size:1.05rem;color:#f1e9e7;}
+
+  section{padding:64px 6%;max-width:1100px;margin:0 auto;}
+  .intro p{max-width:720px;font-size:1.08rem;color:var(--muted);}
+
+  /* stats */
+  .stats{display:flex;flex-wrap:wrap;gap:20px;padding-top:0;}
+  .stat{
+    flex:1;min-width:220px;background:var(--card);border-radius:var(--radius);
+    padding:26px;border-left:4px solid var(--accent);
+    box-shadow:0 6px 20px rgba(0,0,0,0.04);
+  }
+  .stat h3{font-size:1.6rem;color:var(--accent);margin-bottom:6px;}
+  .stat p{color:var(--muted);font-size:0.95rem;}
+
+  /* strategy grid */
+  .strategies h2, .showcase h3, .quick-actions h2, .explore-more h2{
+    font-size:1.9rem;margin-bottom:28px;
+  }
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;}
+  .card{
+    background:var(--card);border-radius:var(--radius);padding:26px;
+    border-top:4px solid var(--accent);
+    box-shadow:0 6px 20px rgba(0,0,0,0.04);
+    transition:transform .2s ease;
+  }
+  .card:hover{transform:translateY(-4px);}
+  .card .icon{font-size:1.7rem;margin-bottom:12px;}
+  .card h4{font-size:1.05rem;margin-bottom:8px;}
+  .card p{color:var(--muted);font-size:0.92rem;}
+
+  /* showcase */
+  .showcase{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;}
+  .showcase-images{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+  .showcase-images img{height:100%;object-fit:cover;aspect-ratio:1/1;}
+  .showcase-text ul{margin-top:16px;padding-left:20px;color:var(--muted);}
+  .showcase-text li{margin-bottom:10px;}
+
+  /* checklist */
+  .checklist{list-style:none;display:grid;gap:14px;max-width:640px;}
+  .checklist li{
+    display:flex;gap:12px;align-items:flex-start;
+    background:var(--card);padding:16px 18px;border-radius:12px;
+    box-shadow:0 4px 14px rgba(0,0,0,0.04);
+  }
+  .checklist li::before{content:"✓";color:var(--accent);font-weight:700;}
+
+  /* explore more */
+  .explore-more .grid{grid-template-columns:repeat(3,1fr);}
+  .explore-card{
+    display:flex;align-items:center;gap:12px;
+    background:var(--card);padding:18px 20px;border-radius:12px;
+    box-shadow:0 4px 14px rgba(0,0,0,0.04);
+  }
+  .explore-card .icon{font-size:1.4rem;}
+  .explore-card:hover{outline:2px solid var(--accent-soft);}
+
+  .back-home-wrap{text-align:center;padding:20px 6% 60px;}
+  .back-home{
+    display:inline-block;background:var(--accent);color:#fff;
+    padding:14px 30px;border-radius:30px;font-weight:600;
+  }
+  footer{
+    text-align:center;padding:24px;background:#1c2333;color:#c9ccd6;font-size:0.9rem;
+  }
+
+  @media(max-width:760px){
+    nav{display:none;}
+    .showcase{grid-template-columns:1fr;}
+    .explore-more .grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="logo"><span class="logo-badge">🏙️</span> SDG 11</div>
+  
+</header>
+
+<section class="hero">
+  <div>
+    <span class="eyebrow">THE SOLUTION</span>
+    <div class="hero-icon">🚌</div>
+    <h1>Green Transportation</h1>
+    <p>Promoting public transport, cycling and walking to cut traffic, pollution and travel stress.</p>
+  </div>
+</section>
+
+<section class="intro">
+  <p>Every city runs on movement — but how people move makes all the difference. Green transportation
+  replaces single-occupancy car trips with buses, trains, bicycles and footpaths, freeing up road space,
+  cutting emissions, and making streets safer and quieter for everyone.</p>
+</section>
+
+<section class="stats">
+  <div class="stat"><h3>1 bus</h3><p>can carry as many people as 30–40 cars, easing congestion for everyone on the road.</p></div>
+  <div class="stat"><h3>0 emissions</h3><p>are produced by walking and cycling — the cheapest green commute there is.</p></div>
+  <div class="stat"><h3>Less noise</h3><p>and cleaner air follow naturally when fewer engines are idling in traffic.</p></div>
+</section>
+
+<section class="strategies">
+  <h2>Key strategies</h2>
+  <div class="grid">
+    <div class="card"><div class="icon">🚉</div><h4>Expand public transit</h4><p>Frequent, affordable buses, metros and trains give people a real alternative to driving.</p></div>
+    <div class="card"><div class="icon">🚲</div><h4>Protected bike lanes</h4><p>Safe, separated cycling infrastructure makes two wheels a practical daily choice.</p></div>
+    <div class="card"><div class="icon">🚶</div><h4>Walkable streets</h4><p>Wide footpaths, shade and pedestrian crossings turn walking into a pleasant option.</p></div>
+    <div class="card"><div class="icon">🔋</div><h4>Electric & shared vehicles</h4><p>EV adoption and carpooling reduce the emissions and congestion cost of car travel.</p></div>
+    <div class="card"><div class="icon">🚫🚗</div><h4>Car-free zones</h4><p>Pedestrian-only city centres reclaim public space and boost local businesses.</p></div>
+    <div class="card"><div class="icon">🚦</div><h4>Smarter traffic signals</h4><p>Coordinated signal timing reduces idling, queues and wasted fuel.</p></div>
+  </div>
+</section>
+
+<section class="showcase">
+  <div class="showcase-images">
+    <img src="cycle.jpeg" alt="Cyclists on a protected bike lane">
+    <img src="bus1.jpeg" alt="Modern electric public bus">
+  </div>
+  <div class="showcase-text">
+    <h3>What it looks like in action</h3>
+    <p style="color:var(--muted)">Cities that get this right share a few common threads:</p>
+    <ul>
+      <li>Bus and metro stops within a short walk of most homes</li>
+      <li>Bike lanes physically separated from car traffic</li>
+      <li>Real-time transit apps that make waiting predictable</li>
+      <li>Affordable fares that make transit the easy choice</li>
+    </ul>
+  </div>
+</section>
+
+<section class="quick-actions">
+  <h2>Small steps you can take today</h2>
+  <ul class="checklist">
+    <li>Choose a bus, train or bike for one trip this week instead of a car</li>
+    <li>Support local proposals for bike lanes and better bus routes</li>
+    <li>Carpool with a neighbour or colleague heading the same way</li>
+    <li>Walk short distances instead of driving when you can</li>
+  </ul>
+</section>
+
+<section class="explore-more">
+  <h2>Explore other solutions</h2>
+  <div class="grid">
+    <a class="explore-card" href="renewable energy.html"><span class="icon">☀️</span> Renewable Energy</a>
+    <a class="explore-card" href="more green spaces.html"><span class="icon">🌳</span> More Green Spaces</a>
+    <a class="explore-card" href="smart waste managment.html"><span class="icon">♻️</span> Smart Waste Management</a>
+  </div>
+</section>
+
+<div class="back-home-wrap">
+  <a class="back-home" href="index2.html">← Back to Home</a>
+</div>
+
+<footer>SDG 11 — Sustainable Cities and Communities</footer>
+
+</body>
+</html>

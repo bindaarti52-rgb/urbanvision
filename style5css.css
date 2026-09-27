@@ -1,0 +1,199 @@
+/* ================= FORM PAGES ================= */
+
+.form-page {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 50px 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e9faf4,
+            #d9f2f5
+        );
+}
+
+.form-box {
+    width: 100%;
+    max-width: 560px;
+
+    background: rgba(255, 255, 255, 0.98);
+
+    padding: 42px;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 25px 70px rgba(0, 60, 70, 0.16);
+
+    border: 1px solid rgba(255,255,255,0.8);
+}
+
+.form-icon {
+    width: 65px;
+    height: 65px;
+
+    background: #d9f5e8;
+
+    border-radius: 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 30px;
+
+    margin-bottom: 20px;
+}
+
+.form-box small {
+    color: #e16a37;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.form-box h1 {
+    color: #123e4c;
+    font-size: 36px;
+    margin: 5px 0 8px;
+}
+
+.form-box > p {
+    color: #668087;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.form-box form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-box form > label {
+    color: #214b57;
+    font-size: 14px;
+    font-weight: 700;
+    margin: 12px 0 6px;
+}
+
+.form-box input[type="text"],
+.form-box input[type="email"],
+.form-box input[type="number"],
+.form-box input[type="tel"],
+.form-box textarea {
+    width: 100%;
+
+    padding: 13px 15px;
+
+    border: 1px solid #cbdcde;
+
+    border-radius: 10px;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition: 0.25s;
+}
+
+.form-box input:focus,
+.form-box textarea:focus {
+    border-color: #2b8b89;
+
+    box-shadow:
+        0 0 0 3px rgba(43,139,137,0.1);
+}
+
+.form-box textarea {
+    resize: vertical;
+}
+
+.gender {
+    display: flex;
+    gap: 25px;
+    margin: 8px 0;
+}
+
+.gender label {
+    font-size: 14px;
+    color: #526c73;
+}
+
+.gender input {
+    margin-right: 5px;
+}
+
+.form-box button {
+    margin-top: 25px;
+
+    border: none;
+
+    padding: 15px;
+
+    border-radius: 30px;
+
+    background: #e96b35;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.form-box button:hover {
+    background: #d95825;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px rgba(233,107,53,0.25);
+}
+
+.back-link {
+    display: block;
+
+    text-align: center;
+
+    margin-top: 20px;
+
+    color: #21636b;
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+.back-link:hover {
+    color: #e96b35;
+}
+
+
+/* FORM MOBILE */
+
+@media (max-width: 600px) {
+
+    .form-box {
+        padding: 28px 22px;
+    }
+
+    .form-box h1 {
+        font-size: 30px;
+    }
+
+    .gender {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+}
